@@ -1,0 +1,4 @@
+
+core-site.xml copied from nfflink-docker-build/conf/core-site.xml
+
+hive-site.xml copied from nfflink-docker-build/conf/hive-site-test.xml

@@ -1,0 +1,417 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more       -->
+<!-- contributor license agreements.  See the NOTICE file distributed with    -->
+<!-- this work for additional information regarding copyright ownership.      -->
+<!-- The ASF licenses this file to You under the Apache License, Version 2.0  -->
+<!-- (the "License"); you may not use this file except in compliance with     -->
+<!-- the License.  You may obtain a copy of the License at                    -->
+<!--                                                                          -->
+<!--     http://www.apache.org/licenses/LICENSE-2.0                           -->
+<!--                                                                          -->
+<!-- Unless required by applicable law or agreed to in writing, software      -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS,        -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and      -->
+<!-- limitations under the License.                                           -->
+
+<configuration>
+
+  <property>
+    <name>hadoop.security.authentication</name>
+    <value>simple</value>
+  </property>
+
+
+  <property>
+    <name>hadoop.proxyuser.httpfs.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.httpfs.groups</name>
+    <value>hudson,testuser,root,hadoop,jenkins,oozie,httpfs,hue,users</value>
+  </property>
+
+  <property>
+    <name>hadoop.proxyuser.hue.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.hue.groups</name>
+    <value>*</value>
+  </property>
+
+  <property>
+    <name>hadoop.proxyuser.oozie.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.oozie.groups</name>
+    <value>*</value>
+  </property>
+
+
+
+  <property>
+    <name>io.compression.codecs</name>
+    <value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.BZip2Codec,org.apache.hadoop.io.compress.SnappyCodec</value>
+  </property>
+
+  <property>
+    <name>io.compression.codec.lzo.class</name>
+    <value>com.hadoop.compression.lzo.LzoCodec</value>
+  </property>
+
+
+  <property>
+    <name>ipc.client.connect.max.retries.on.timeouts</name>
+    <value>5</value>
+  </property>
+
+  <property>
+    <name>hadoop.proxyuser.hive.hosts</name>
+    <value>*</value>
+  </property>
+
+  <property>
+    <name>hadoop.proxyuser.hive.groups</name>
+    <value>*</value>
+  </property>
+
+  <property>
+    <name>hadoop.security.key.default.bitlength</name>
+    <value>256</value>
+  </property>
+
+  <property>
+    <name>netflix.bdp.credentials.provider</name>
+    <value>com.netflix.hadoop.aws.ConfigurableCredentialsProvider</value>
+  </property>
+
+  <property>
+    <name>dynamodb.customAWSCredentialsProvider</name>
+    <value>com.netflix.hadoop.aws.ConfigurableCredentialsProvider</value>
+  </property>
+
+  <property>
+    <name>s3mper.listing.recheck.count</name>
+    <value>15</value>
+  </property>
+
+  <property>
+    <name>hadoop.security.key.provider.path</name>
+    <value>kms://http@${NAMENODE_ADDRESS}:9700/kms</value>
+  </property>
+
+  <property>
+    <name>hadoop.proxyuser.hadoop.groups</name>
+    <value>*</value>
+  </property>
+
+  <property>
+    <name>ipc.server.listen.queue.size</name>
+    <value>512</value>
+  </property>
+
+  <property>
+    <name>aws.iam.role.arn.default</name>
+    <value>arn:aws:iam::219382154434:role/EMR_EC2_DefaultRole</value>
+  </property>
+
+  <property>
+    <name>aws.ec2.metadata.retry.count</name>
+    <value>30</value>
+  </property>
+
+  <property>
+    <name>aws.iam.uri.scheme.mapping.s3n</name>
+    <value>s3</value>
+  </property>
+
+  <property>
+    <name>s3mper.disable</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>s3mper.metastore.timeout</name>
+    <value>30000</value>
+  </property>
+
+  <property>
+    <name>s3mper.listing.recheck.period</name>
+    <value>60000</value>
+  </property>
+
+  <property>
+    <name>s3mper.credentials.provider.property</name>
+    <value>netflix.bdp.credentials.provider</value>
+  </property>
+
+  <property>
+    <name>aws.iam.dummy.key.on.exception</name>
+    <value>AKI_NFLX_DUMMY_KEY</value>
+  </property>
+
+  <property>
+    <name>io.file.buffer.size</name>
+    <value>65536</value>
+  </property>
+
+  <property>
+    <name>aws.ec2.metadata.retry.interval.ms</name>
+    <value>10000</value>
+  </property>
+
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/mnt/var/lib/hadoop/tmp</value>
+  </property>
+
+  <property>
+    <name>hadoop.proxyuser.hadoop.hosts</name>
+    <value>*</value>
+  </property>
+
+  <property>
+    <name>s3mper.metastore.retry</name>
+    <value>5</value>
+  </property>
+
+  <property>
+    <name>fs.s3.customAWSCredentialsProvider</name>
+    <value>com.netflix.hadoop.aws.ConfigurableCredentialsProvider</value>
+  </property>
+
+  <property>
+    <name>hadoop.security.token.service.use_ip</name>
+    <value>false</value>
+  </property>
+
+  <!--Presto s3 fs configuration -->
+  <property>
+    <name>fs.s3a.endpoint</name>
+    <value>s3-external-1.amazonaws.com</value>
+  </property>
+
+  <property>
+    <name>fs.s3a.buffer.dir</name>
+    <value>/mnt/s3</value>
+  </property>
+
+  <property>
+    <name>fs.s3.impl</name>
+    <value>com.facebook.presto.s3fs.PrestoS3FileSystem</value>
+  </property>
+
+  <property>
+    <name>fs.s3n.impl</name>
+    <value>com.facebook.presto.s3fs.PrestoS3FileSystem</value>
+  </property>
+
+  <property>
+    <name>fs.s3a.impl</name>
+    <value>com.facebook.presto.s3fs.PrestoS3FileSystem</value>
+  </property>
+
+  <property>
+    <name>fs.AbstractFileSystem.s3.impl</name>
+    <value>com.facebook.presto.s3fs.PrestoS3FileSystem</value>
+  </property>
+
+  <property>
+    <name>fs.AbstractFileSystem.s3n.impl</name>
+    <value>com.facebook.presto.s3fs.PrestoS3FileSystem</value>
+  </property>
+
+  <property>
+    <name>fs.AbstractFileSystem.s3a.impl</name>
+    <value>com.facebook.presto.s3fs.PrestoS3FileSystem</value>
+  </property>
+
+  <!--Presto s3 fs configuration-->
+  <property>
+    <name>fs.s3.contract.full</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>presto.s3.staging-directory</name>
+    <value>${S3FS_STAGING_DIRS}</value>
+  </property>
+
+  <property>
+    <name>presto.s3.max-client-retries</name>
+    <value>10</value>
+  </property>
+
+  <property>
+    <name>presto.s3.max-error-retries</name>
+    <value>10</value>
+  </property>
+
+  <property>
+    <name>presto.s3.max-connections</name>
+    <value>500</value>
+  </property>
+
+  <property>
+    <name>presto.s3.connect-timeout</name>
+    <value>5s</value>
+  </property>
+
+  <property>
+    <name>presto.s3.socket-timeout</name>
+    <value>50s</value>
+  </property>
+
+  <property>
+    <name>presto.s3.max-backoff-time</name>
+    <value>30s</value>
+  </property>
+
+  <property>
+    <name>presto.s3.max-retry-time</name>
+    <value>1m</value>
+  </property>
+
+  <property>
+    <name>presto.s3.use-instance-credentials</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>presto.s3.multipart.min-file-size</name>
+    <value>192000000</value>
+  </property>
+
+  <property>
+    <name>presto.s3.multipart.min-part-size</name>
+    <value>134217728</value>
+  </property>
+
+  <property>
+    <name>presto.s3.user-agent-prefix</name>
+    <value>${presto_s3fs_user_agent}</value>
+  </property>
+
+  <!-- Presto's cred provider-->
+  <property>
+    <name>presto.s3.credentials-provider</name>
+    <value>com.netflix.hadoop.aws.ConfigurableCredentialsProvider</value>
+  </property>
+  <property>
+    <name>aws.iam.use.instance.profile.default</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>aws.iam.uri.scheme.mapping.s3n</name>
+    <value>s3</value>
+  </property>
+
+  <property>
+    <name>aws.iam.role.arn.s3.netflix-vault</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDIVault</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.eu-west-1.netflix-vault</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDIVault</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.us-west-2.netflix-vault</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDIVault</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.netflix-vault-test</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDIVault</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.eu-west-1.netflix-vault-test</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDIVault</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.us-west-2.netflix-vault-test</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDIVault</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.netflix-restricted-use-mkt</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDIRouter</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.netflix-dataoven-test</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.eu-west-1.netflix-dataoven-test</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.us-west-2.netflix-dataoven-test</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.netflix-dataoven-prod</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.eu-west-1.netflix-dataoven-prod</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.us-west-2.netflix-dataoven-prod</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.netflix-dataoven-test-users</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.eu-west-1.netflix-dataoven-test-users</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.us-west-2.netflix-dataoven-test-users</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.netflix-dataoven-prod-users</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.eu-west-1.netflix-dataoven-prod-users</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+  <property>
+    <name>aws.iam.role.arn.s3.us-west-2.netflix-dataoven-prod-users</name>
+    <value>arn:aws:iam::219382154434:role/BdpRTDI</value>
+  </property>
+
+  <property>
+    <name>aws.iam.dummy.key.on.exception</name>
+    <value>AKI_NFLX_DUMMY_KEY</value>
+  </property>
+
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/mnt/tmp</value>
+  </property>
+
+  <property>
+    <name>fs.s3.customAWSCredentialsProvider</name>
+    <value>com.netflix.hadoop.aws.ConfigurableCredentialsProvider</value>
+  </property>
+
+  <property>
+    <name>fs.AbstractFileSystem.s3.impl</name>
+    <value>com.facebook.presto.s3fs.DelegateS3FileSystem</value>
+  </property>
+  
+  <property>
+    <name>fs.AbstractFileSystem.s3n.impl</name>
+    <value>com.facebook.presto.s3fs.DelegateS3FileSystem</value>
+  </property>
+
+</configuration>
+
+

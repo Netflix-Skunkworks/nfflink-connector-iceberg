@@ -1,0 +1,60 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+configurations.all {
+    resolutionStrategy {
+
+    }
+}
+
+
+dependencies {
+    compile 'com.amazonaws:aws-java-sdk-s3:1.11.147'
+    compile 'org.apache.hadoop:hadoop-common:2.7.5'
+
+    compile(group: "org.apache.iceberg", name: "iceberg-core", version: "$ICEBERG_VERSION")
+    compile(group: "org.apache.iceberg", name: "iceberg-parquet", version: "$ICEBERG_VERSION")
+
+    compile "org.apache.flink:flink-java:${FLINK_FULL_VERSION}"
+    compile "org.apache.flink:flink-streaming-java_${SCALA_VERSION}:${FLINK_FULL_VERSION}"
+    compile(group: "org.apache.flink", name: "flink-connector-filesystem_${SCALA_VERSION}", version: "$FLINK_FULL_VERSION")  {
+        transitive = false
+    }
+    // add flink-avro dep as Iceberg sink uses Avro record as state type for schema evolution support from Flink
+    compile(group: "org.apache.flink", name: "flink-avro", version: "$FLINK_FULL_VERSION")
+
+    compile(group: "com.netflix.spectator", name: "spectator-api", version: "0.103.0")
+
+    // bdp-iceberg doesn't shade or bring in parquet jars
+    compile(group: "com.twitter", name: "parquet-hadoop-bundle", version: "${PARQUET_HADOOP_BUNDLE_VERSION}")
+    // parquet-format evolves independently with parquet bundle.
+    // that why format version is different with bundle version.
+    compile(group: "org.apache.parquet", name: "parquet-format", version: "${PARQUET_FORMAT_VERSION}")
+
+    testCompile 'org.testng:testng:6.+'
+    testCompile 'org.assertj:assertj-core:3.3.0'
+    testCompile "org.mockito:mockito-all:1.10.+"
+
+    testCompile (group: "org.apache.flink", name: "flink-runtime_${SCALA_VERSION}", version: "$FLINK_FULL_VERSION", classifier: "tests")
+    testCompile (group: "org.apache.flink", name: "flink-streaming-java_${SCALA_VERSION}", version: "$FLINK_FULL_VERSION", classifier: "tests")
+}
+
+test {
+    useTestNG()
+
+
+    // set a system property for the test JVM(s)
+    //systemProperty 'some.prop', 'value'
+
+    // show standard out and standard error of the test JVM(s) on the console
+    testLogging.showStandardStreams = true
+
+    // set JVM arguments for the test JVM(s)
+    //jvmArgs ''
+
+}
+

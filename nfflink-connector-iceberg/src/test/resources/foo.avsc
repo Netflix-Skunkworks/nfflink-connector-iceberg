@@ -1,0 +1,28 @@
+{
+   "type":"record",
+   "name":"foo",
+   "fields":[
+      {
+         "name":"uuid",
+         "type":[
+            "null",
+            "string"
+         ],
+         "default":null,
+         "field-id":1
+      },
+      {
+         "name":"ts",
+         "type":[
+            "null",
+            {
+               "type":"long",
+               "logicalType":"timestamp-micros",
+               "adjust-to-utc":true
+            }
+         ],
+         "default":null,
+         "field-id":2
+      }
+   ]
+}

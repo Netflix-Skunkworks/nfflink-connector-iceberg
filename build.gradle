@@ -1,0 +1,18 @@
+allprojects {
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    group = "com.netflix.nfflink"
+
+    configurations.all {
+        exclude group: 'com.oracle'
+        exclude group: 'org.apache.ant', module: 'ant'
+        exclude group: 'org.apache.cxf', module: 'cxf'
+        exclude group: 'javax.persistence', module: 'persistence-api'
+        // exclude old avro 1.6.2
+        exclude group: 'avro'
+    }
+}
+

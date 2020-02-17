@@ -1,0 +1,136 @@
+{
+    "namespace": "com.netflix.spaas.nfflink.connector.iceberg.model",
+    "name": "Student",
+    "type": "record",
+    "fields": [
+        {
+            "name": "id",
+            "type": "long"
+        },
+        {
+            "name": "age",
+            "type": "int"
+        },
+        {
+            "name": "married",
+            "type": "boolean"
+        },
+        {
+            "name": "average",
+            "type": "float"
+        },
+        {
+            "name": "max",
+            "type": "double"
+        },
+        {
+            "name": "comment",
+            "type": "string"
+        },
+        {
+            "name": "crc32",
+            "type": "bytes"
+        },
+        {
+            "name": "signature",
+            "type": {
+                "name": "MD5",
+                "type": "fixed",
+                "size": 16
+            }
+        },
+        {
+            "name": "suit",
+            "type": {
+                "type": "enum",
+                "name": "Suit",
+                "symbols": [
+                    "SPADES",
+                    "HEARTS",
+                    "DIAMONDS",
+                    "CLUBS"
+                ]
+            }
+        },
+        {
+            "name": "scores",
+            "type": {
+                "type": "array",
+                "items": "int"
+            }
+        },
+        {
+            "name": "friends",
+            "type": {
+                "type": "array",
+                "items": {
+                    "type": "map",
+                    "values": "string"
+                }
+            }
+        },
+        {
+            "name": "courses",
+            "type": {
+                "type": "array",
+                "items": {
+                    "name": "Course",
+                    "type": "record",
+                    "fields": [
+                        {
+                            "name": "name",
+                            "type": "string"
+                        },
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "contact",
+            "type": {
+                "name": "Contact",
+                "type": "record",
+                "fields": [
+                    {
+                        "name": "address",
+                        "type": "string"
+                    },
+                    {
+                        "name": "phone",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "tags",
+            "type": {
+                "type": "map",
+                "values": "string"
+            }
+        },
+        {
+            "name": "classes",
+            "type": [
+                "null",
+                {
+                    "type": "array",
+                    "items": [ "null", "string" ]
+                }
+            ],
+            "default":null
+        },
+        {
+            "name": "alias",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null
+        }
+    ]
+}

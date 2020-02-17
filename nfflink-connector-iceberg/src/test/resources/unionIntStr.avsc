@@ -1,0 +1,13 @@
+{
+   "type":"record",
+   "name":"UnionIntStr",
+   "fields":[
+      {
+         "name":"unionIntStr",
+         "type":[
+            "int",
+            "string"
+         ]
+      }
+   ]
+}

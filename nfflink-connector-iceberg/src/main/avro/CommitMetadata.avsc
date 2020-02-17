@@ -1,0 +1,11 @@
+{
+    "type": "record",
+    "name": "CommitMetadata",
+    "namespace": "com.netflix.spaas.nfflink.connector.iceberg.model",
+    "fields":[
+        { "name":"lastCheckpointId", "type": "long"},
+        { "name":"lastCheckpointTimestamp", "type": "long"},
+        { "name":"lastCommitTimestamp", "type": "long"},
+        { "name":"vttsWatermark", "type": ["null", "long"], "default": null}
+    ]
+}
